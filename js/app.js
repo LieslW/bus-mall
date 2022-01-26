@@ -1,6 +1,6 @@
 'use strict';
 
-// console.log('hey there hey!');
+console.log('hey there hey!');
 
 // ************* GLOBAL VARIABLES *******************
 
@@ -24,6 +24,7 @@ const storeArray = [];
 let maxVotes = 25;
 let counter = 0;
 
+let prevIndexCollection = [];
 
 // ******* CONSTRUCTOR FUNCTION TO INSTANTIATE GOATS ********
 function Store(name, fileExtension = 'jpg'){
@@ -69,14 +70,16 @@ function renderImages() {
 
   while(indexCollection.length < 3){
     let randoNum = getRandomIndex();
-    while(!indexCollection.includes(randoNum)){
+    while(!indexCollection.includes(randoNum)&&(!prevIndexCollection.includes(randoNum))){
       indexCollection.push(randoNum);
     }
   }
-
+  
   let storeOneIndex = indexCollection.pop();
   let storeTwoIndex = indexCollection.pop();
   let storeThreeIndex = indexCollection.pop();
+
+  prevIndexCollection = [storeOneIndex, storeTwoIndex, storeThreeIndex];
 
   // validation - to make sure the images are unique per round
   // **NOTE** your lab will need to have 3 unique images
