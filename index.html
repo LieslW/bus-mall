@@ -4,19 +4,33 @@
   <title>Bus Mall</title>
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
 <body>
-  <h1>Bus Mall</h1>
+  <h1 id="busMallTitle">Bus Mall</h1>
   <main> 
+    <h3>Hello!</h3>
     <section id="container">
       <img id="img-one" src="" alt="">
       <img id="img-two" src="" alt="">
+      <img id="img-three" src="" alt="">
     </section>
  
-    <div id="show-results-btn">Show Results</div>
-    <ul id="display-results"></ul>
+    <!-- create div to act as button-->
+    <div id = resultsButtonAndData>
+      <div id="show-results-btn">Show Results</div>
+      <ul id="display-results"></ul>
+    </div>
+
+    <section>
+      <canvas id="myChart"></canvas>
+    </section>
 
   </main>
+
+  <!-- Bring in Chart.js Library - CDN minified version -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js"></script>
   <script src="js/app.js"></script>
 </body>
 </html>

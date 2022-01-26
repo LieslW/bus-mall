@@ -1,3 +1,63 @@
+body {
+  background-color:cadetblue;
+}
+
 h1 {
-  background-color: aquamarine;
+  background-color:cornsilk;
+  color:cadetblue;
+  margin-left: 50px;
+  margin-right: 50px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  padding: 50px;
+  text-align: center;
+  font-size: 100px;
+  font-family: 'Supermercado One', cursive;
+}
+
+img {
+width: 250px;
+height: 250px;
+margin: 50px;
+}
+
+main section {
+  background-color:darkkhaki;
+  width: 80%;
+  height: 80vh;
+  margin: 25px auto;
+  display: flex;
+  justify-content: space-evenly;
+
+}
+
+main div {
+  width: max-content;
+  margin: auto;
+  padding: 10px;
+  border: 2px solid black;
+  background-color: bisque;
+  font-family: 'Supermercado One', cursive;
+}
+
+h3 {
+  text-align: center;
+  font-size: 50px;
+  font-family: 'Supermercado One', cursive;
+  color:bisque;
+  animation-duration: 8s;
+  animation-name: slidein;
+  animation-iteration-count: infinite;
+}
+
+@keyframes slidein {
+0% {
+  margin-left: 0%;
+}
+50% {
+  margin-left: 300px;
+}
+100% {
+  margin-left: 0%;
+}
 }
