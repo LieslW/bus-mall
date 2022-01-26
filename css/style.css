@@ -24,20 +24,11 @@ margin: 50px;
 main section {
   background-color:darkkhaki;
   width: 80%;
-  height: 60vh;
-  margin: 25px auto;
-  display: flex;
-  justify-content: space-evenly;
-
-}
-
-section {
-  background-color: darkkhaki;
-  width:80%;
   height: 80vh;
   margin: 25px auto;
   display: flex;
   justify-content: space-evenly;
+
 }
 
 main div {

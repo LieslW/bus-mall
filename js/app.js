@@ -74,7 +74,7 @@ function renderImages() {
       indexCollection.push(randoNum);
     }
   }
-  
+  console.log(prevIndexCollection, indexCollection)
   let storeOneIndex = indexCollection.pop();
   let storeTwoIndex = indexCollection.pop();
   let storeThreeIndex = indexCollection.pop();
