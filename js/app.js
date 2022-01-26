@@ -35,15 +35,26 @@ function Store(name, fileExtension = 'jpg'){
 }
 
 // ******* INSTANTIATE SOME PRODUCTS *****
+new Store('bag');
+new Store('banana');
+new Store('bathroom');
+new Store('boots');
+new Store('breakfast');
+new Store('bubblegum');
+new Store('chair');
+new Store('cthulhu');
+new Store('dog-duck');
+new Store('dragon');
+new Store('pen');
+new Store('pet-sweep');
+new Store('scissors');
+new Store('shark');
 new Store('sweep', 'png');
-new Store('img');
-new Store('img');
-new Store('img');
-new Store('img');
-new Store('img');
-new Store('img');
-new Store('img');
-new Store('img');
+new Store('tauntaun');
+new Store('unicorn');
+new Store('water-can');
+new Store('wine-glass');
+
 
 console.log(storeArray);
 
@@ -87,7 +98,7 @@ function renderImages() {
   storeArray[storeOneIndex].views++;
 
   imgTwo.src = storeArray[storeTwoIndex].src;
-  imgTwo.alt = storeArray[storeTwoIndex].alt;
+  imgTwo.alt = storeArray[storeTwoIndex].name;
   storeArray[storeTwoIndex].views++;
 
   imgThree.src = storeArray[storeThreeIndex].src;
@@ -100,9 +111,10 @@ function renderImages() {
 renderImages();
 
 function renderChart (){
-let storeNames = []; 
+  let storeNames = []; 
   let storeVotes = [];
   let storeViews = [];
+
 
   for(let i = 0; i < storeArray.length; i++){
     storeNames.push(storeArray[i].name);
@@ -117,14 +129,14 @@ let storeNames = [];
         datasets: [{
             label: '# of Votes',
             data: storeVotes,
-            backgroundColor: 'rgba(255, 99, 132, 0.2)',
-            borderColor: 'rgba(255, 99, 132, 1)',
+            backgroundColor: 'rgba(255, 82, 40, 0.5)',
+            borderColor: 'rgba(255, 82, 40, 1)',
             borderWidth: 1
         },
         {label: '# of Views',
         data: storeViews,
-        backgroundColor: 'rgba(255, 99, 132, 0.2)',
-        borderColor: 'rgba(255, 99, 132, 1)',
+        backgroundColor: 'rgba(132, 8, 130, 0.5)',
+        borderColor: 'rgba(132, 8, 130, 1)',
         borderWidth: 1
         }
       
@@ -139,13 +151,13 @@ let storeNames = [];
     }
 };
 // Pull in our Chart code: 2 args: DOM reference & object that will build out our chart
-  const myChart = new Chart(ctx, chartobj);
-
+const myChart = new Chart(ctx, chartObj); // eslint-disable-line
+}
 // ***** EVENTS ****
 
 // events - click images
 function handleClick(event){
-  // max clicks 15 - decriment
+  // max clicks 25 - decriment
   maxVotes--;
 
   //listen to which image was clicked increase the vote
