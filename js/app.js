@@ -199,14 +199,16 @@ function handleShowResults(event) {
   if (maxVotes === 0) {
     renderChart();
   }
-}
+
   
 //Stringify your data
 let stringifiedStore = JSON.stringify(storeArray);
-console.log(stringifiedStore)
+// console.log(stringifiedStore)
 
 // //Step 2: Set the item in local storage
 localStorage.setItem('store', stringifiedStore);
+
+}
 
 //Step #1 - Event listener
 
