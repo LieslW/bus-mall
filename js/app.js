@@ -20,7 +20,7 @@ let imgThree = document.getElementById('img-three');
 const ctx = document.getElementById('myChart').getContext('2d');
 
 // +++++ OTHER GLOBALS ++++++
-const storeArray = [];
+let storeArray = [];
 let maxVotes = 25;
 let counter = 0;
 
@@ -34,6 +34,20 @@ function Store(name, fileExtension = 'jpg'){
   this.votes = 0;
   storeArray.push(this);
 }
+
+
+//step 3: get products out of local storage 
+let retrievedStore = localStorage.getItem('store');
+
+let parsedStore = JSON.parse(retrievedStore);
+
+console.log(parsedStore);
+
+//step 4: if I have goats in LS, use those, if not then instantiate new goats 
+
+if(retrievedStore){
+  storeArray = parsedStore;
+} else {
 
 // ******* INSTANTIATE SOME PRODUCTS *****
 new Store('bag');
@@ -55,7 +69,7 @@ new Store('tauntaun');
 new Store('unicorn');
 new Store('water-can');
 new Store('wine-glass');
-
+}
 
 console.log(storeArray);
 
@@ -74,7 +88,7 @@ function renderImages() {
       indexCollection.push(randoNum);
     }
   }
-  console.log(prevIndexCollection, indexCollection)
+  console.log(prevIndexCollection, indexCollection);
   let storeOneIndex = indexCollection.pop();
   let storeTwoIndex = indexCollection.pop();
   let storeThreeIndex = indexCollection.pop();
@@ -187,6 +201,12 @@ function handleShowResults(event) {
   }
 }
   
+//Stringify your data
+let stringifiedStore = JSON.stringify(storeArray);
+console.log(stringifiedStore)
+
+// //Step 2: Set the item in local storage
+localStorage.setItem('store', stringifiedStore);
 
 //Step #1 - Event listener
 
